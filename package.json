@@ -6,9 +6,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cookie": "^0.4.1",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/mongoose": "^5.11.97",
+    "axios": "^0.26.0",
+    "bcrypt": "^5.0.1",
+    "cookie": "^0.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.3",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "17.0.4",

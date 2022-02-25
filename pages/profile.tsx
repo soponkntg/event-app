@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { GetServerSidePropsContext, NextPage } from 'next'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import EventCard from '../components/EventCard'
 import Header from '../components/Header'
 import Loading from '../components/Loading'
@@ -8,14 +8,16 @@ import Title from '../components/Title'
 import { Event, EventResponse, PageProps } from '../Type'
 import { userFromRequest } from '../utils/authUtils'
 
-const Home: NextPage<PageProps> = ({ userId }) => {
+const Profile: NextPage<PageProps> = ({ userId }) => {
   const [event, setEvent] = useState<Event[]>([])
   const [loading, setLoadind] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchData = async () => {
       setLoadind(true)
-      const { data } = await axios.get<EventResponse>('/api/event')
+      const { data } = await axios.get<EventResponse>(
+        `/api/event/user/${userId}`
+      )
       setEvent(data.event)
       setLoadind(false)
     }
@@ -77,4 +79,4 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   }
 }
 
-export default Home
+export default Profile
