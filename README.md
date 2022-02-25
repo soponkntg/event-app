@@ -1,6 +1,6 @@
 ## About The Project
 
-Handicare project
+Event app project
 
 <!-- GETTING STARTED -->
 ## Getting Started
